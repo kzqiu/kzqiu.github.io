@@ -3,17 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>kevin's ramblings</title>
+    <title>kevin's curiosities</title>
     <style>
       body {
         background-color: #1f2937;
         color: oklch(86.9% 0.022 252.894);
       }
+      ::selection {
+        background-color: oklch(83.3% 0.145 321.434);
+        color: oklch(40.1% 0.17 325.612);
+      }
+      header {
+        margin-block: 4rem auto;
+      }
       a {
         color: inherit;
       }
+      p {
+        line-height: 1.4;
+      }
       .wrapper {
-        max-width: 72rem;
+        max-width: 40rem;
         margin: auto;
         padding-inline: 36px;
         padding-block: 12px;
@@ -23,7 +33,23 @@
   <body>
     <header>
       <div class="wrapper">
-        <h1>kevin's ramblings &lt;°)))&gt;&lt;</h1>
+        <h1>kevin's curiosities &lt;°)))&gt;&lt;</h1>
+        <p>
+          <small>
+            <i>It's not the first one, is it? It's the next one. Always the next...</i>
+          </small>
+        </p>
+      </div>
+    </header>
+    <section id="bio">
+      <div class="wrapper">
+        <p>I'm a (graduating) computer science student at Columbia University and incoming software engineer at Roblox interested in systems programming, machine learning, and robotics.</p>
+        <p>In my free time, you can probably find me trying new coffees, hanging out with cats, playing roguelikes, or reading anything and everything.</p>
+        <!-- <p>(o&lt;&nbsp;&nbsp;&gt;o)&nbsp;&nbsp;&gt;o)<br>&gt;_)&nbsp;&nbsp;(_&lt;&nbsp;&nbsp;(_&lt;</p> -->
+      </div>
+    </section>
+    <footer>
+      <div class="wrapper">
         <p>
           <small>
             Find me on 
@@ -33,14 +59,6 @@
           </small>
         </p>
       </div>
-    </header>
-    <section>
-      <div class="wrapper">
-        <p>Coming soon! In the meantime, enjoy these ducks:</p>
-        <p>
-          (o&lt;&nbsp;&nbsp;&gt;o)&nbsp;&nbsp;&gt;o)<br>&gt;_)&nbsp;&nbsp;(_&lt;&nbsp;&nbsp;(_&lt; 
-        </p>
-      </div>
-    </section>
+    </footer>
   </body>
 </html>
