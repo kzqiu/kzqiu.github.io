@@ -1,1 +1,1 @@
-# a personal website and blog
+# Kevin's curiosities: a personal blog website
