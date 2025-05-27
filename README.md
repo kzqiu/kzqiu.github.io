@@ -1,1 +1,1 @@
-# Kevin's curiosities: a personal blog website
+# Kevin's Curios: a personal blog website
