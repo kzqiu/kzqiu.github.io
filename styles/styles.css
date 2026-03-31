@@ -1,0 +1,32 @@
+body {
+  background-color: #1f2937;
+  color: oklch(86.9% 0.022 252.894);
+}
+
+::selection {
+  background-color: oklch(83.3% 0.145 321.434);
+  color: oklch(40.1% 0.17 325.612);
+}
+
+header {
+  margin-block: 4rem auto;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: oklch(97.7% 0.017 320.058)
+}
+
+p {
+  line-height: 1.4;
+}
+
+.wrapper {
+  max-width: 40rem;
+  margin: auto;
+  padding-inline: 1rem;
+  padding-block: 12px;
+}
