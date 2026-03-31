@@ -1,1 +1,3 @@
-# Kevin's Curios: a personal blog website
+# kzqiu.github.io
+
+Not much to see here.
