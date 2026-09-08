@@ -1,4 +1,4 @@
-# Kevin's Curios
+# Klog
 
 Astro + Markdown + KaTeX, deployed as static HTML to GitHub Pages.
 
