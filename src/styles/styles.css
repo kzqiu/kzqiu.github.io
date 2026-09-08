@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --background: #fff;
+  --text: #000;
+  --heading: #111;
+  --muted: #666;
+  --link: #0645ad;
+  --link-hover: #06e;
+  --border: #eaecef;
+  --surface: #f8f8f8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+.wrapper {
+  width: 100%;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+.wrapper--wide { max-width: 76rem; }
+.site-header { margin-block: 3.5rem 2.5rem; text-align: center; }
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading);
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-weight: 400;
+  line-height: 1.25;
+  text-wrap: balance;
+  scroll-margin-top: 1.5rem;
+}
+h1 { margin: 0 0 0.75rem; font-size: clamp(2rem, 6vw, 2.5rem); }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h2, h3 {
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+.site-name { margin: 0 0 0.75rem; font: 2rem/1.25 "EB Garamond", Garamond, Georgia, serif; }
+.site-name a { color: var(--heading); text-decoration: none; }
+.site-nav { font-style: normal; }
+.site-nav a[aria-current="page"] { color: var(--text); }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover, a:active { color: var(--link-hover); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+}
+.skip-link { position: absolute; left: 1rem; top: -5rem; }
+.skip-link:focus { top: 0.5rem; padding: 0.25rem 0.5rem; background: var(--background); }
+main { padding-bottom: 4rem; }
+p { margin: 0.75rem 0; }
+ul, ol { padding-left: 1.5rem; }
+li { margin-block: 0.25rem; }
+.page-header { margin-bottom: 2rem; }
+.meta { color: var(--muted); font-size: 1rem; }
+.entry-list { list-style: none; padding: 0; }
+.entry-list > li { margin-block: 1.5rem; }
+.entry-list h2, .entry-list h3 { margin: 0; padding: 0; border: 0; }
+.entry-list p { margin: 0.25rem 0; }
+blockquote { margin-inline: 0; padding-left: 1rem; border-left: 3px solid var(--border); color: var(--muted); }
+hr { border: 0; border-top: 1px solid var(--border); margin-block: 2rem; }
+code, pre { font-family: ui-monospace, Consolas, monospace; font-size: 0.85em; }
+code { padding: 0.1em 0.25em; border: 1px solid #ddd; border-radius: 3px; background: var(--surface); }
+pre { overflow-x: auto; padding: 1rem; border: 1px solid #ddd; border-radius: 3px; background: var(--surface); }
+pre code { padding: 0; border: 0; font-size: 1em; }
+img, video, canvas { max-width: 100%; height: auto; }
+figure { margin: 1.5rem 0; }
+figcaption { color: var(--muted); font-size: 1rem; text-align: center; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 0.5rem; border-bottom: 1px solid var(--border); }
+button, input, select, textarea { font: inherit; }
+.katex { font-size: 1.1em; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding-block: 0.25rem; }
+@media (max-width: 40rem) {
+  .site-header { margin-block: 2.5rem 2rem; }
+}
+@media print {
+  .site-nav, .skip-link { display: none; }
+  .site-header { margin-block: 0 2rem; }
+  .wrapper { max-width: none; padding: 0; }
+  a { color: inherit; }
+}

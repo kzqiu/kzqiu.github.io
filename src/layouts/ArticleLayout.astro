@@ -1,0 +1,21 @@
+---
+import 'katex/dist/katex.min.css';
+import SiteLayout from './SiteLayout.astro';
+import { formatDate } from '../lib/content';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+}
+const { title, description, date } = Astro.props;
+---
+<SiteLayout title={title} description={description} article>
+  <article>
+    <header class="page-header">
+      <h1>{title}</h1>
+      <p class="meta"><time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time></p>
+    </header>
+    <slot />
+  </article>
+</SiteLayout>

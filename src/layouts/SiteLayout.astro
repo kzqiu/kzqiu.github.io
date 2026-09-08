@@ -1,0 +1,45 @@
+---
+import '../styles/styles.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  article?: boolean;
+  wide?: boolean;
+}
+const { title, description, article = false, wide = false } = Astro.props;
+const siteName = "Kevin's Curios";
+const nav = [
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/projects/' },
+  { label: 'Thoughts', href: '/thoughts/' },
+];
+const pathname = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title === siteName ? title : `${title} — ${siteName}`}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={new URL(pathname === '/index.html' ? '/' : pathname, Astro.site)} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrapper">
+      {article ? <p class="site-name"><a href="/">{siteName}</a></p> : <h1>{title}</h1>}
+      <nav class="site-nav" aria-label="Main navigation">
+        {nav.map(({ label, href }, index) => <>
+          {index > 0 && ', '}
+          <a href={href} aria-current={pathname === href || (href === '/' && pathname === '/index.html') ? 'page' : undefined}>{label}</a>
+        </>)}
+      </nav>
+    </header>
+    <main id="main" class:list={['wrapper', { 'wrapper--wide': wide }]}>
+      <slot />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import EntryList from '../components/EntryList.astro';
+import { publishedEntries } from '../lib/content';
+const entries = await publishedEntries('projects');
+---
+<SiteLayout title="Projects">
+  <section aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects and experiments</h2>
+    <EntryList entries={entries} />
+  </section>
+</SiteLayout>

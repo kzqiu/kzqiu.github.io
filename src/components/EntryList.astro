@@ -1,0 +1,16 @@
+---
+import { articleUrl, formatDate, type Article } from '../lib/content';
+interface Props { entries: Article[] }
+const { entries } = Astro.props;
+---
+{entries.length === 0 ? <p class="meta">Nothing published yet.</p> : (
+  <ul class="entry-list">
+    {entries.map((entry) => (
+      <li>
+        <h3><a href={articleUrl(entry)}>{entry.data.title}</a></h3>
+        <p class="meta"><time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time></p>
+        {entry.data.description && <p>{entry.data.description}</p>}
+      </li>
+    ))}
+  </ul>
+)}
