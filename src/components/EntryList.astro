@@ -3,7 +3,7 @@ import { articleUrl, formatDate, type Article } from '../lib/content';
 interface Props { entries: Article[] }
 const { entries } = Astro.props;
 ---
-{entries.length === 0 ? <p class="meta">Nothing published yet.</p> : (
+{entries.length === 0 ? <p class="meta">nothing published yet.</p> : (
   <ul class="entry-list">
     {entries.map((entry) => (
       <li>

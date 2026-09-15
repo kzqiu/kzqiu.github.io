@@ -8,11 +8,11 @@ interface Props {
   wide?: boolean;
 }
 const { title, description, article = false, wide = false } = Astro.props;
-const siteName = 'Klog';
+const siteName = 'klog';
 const nav = [
-  { label: 'Home', href: '/' },
-  { label: 'Projects', href: '/projects/' },
-  { label: 'Thoughts', href: '/thoughts/' },
+  { label: 'home', href: '/' },
+  { label: 'projects', href: '/projects/' },
+  { label: 'thoughts', href: '/thoughts/' },
 ];
 const pathname = Astro.url.pathname;
 ---
@@ -33,9 +33,10 @@ const pathname = Astro.url.pathname;
       {article ? <p class="site-name"><a href="/">{siteName}</a></p> : <h1>{title}</h1>}
       <nav class="site-nav" aria-label="Main navigation">
         {nav.map(({ label, href }, index) => <>
-          {index > 0 && ', '}
+          {index > 0 && '.. '}
           <a href={href} aria-current={pathname === href || (href === '/' && pathname === '/index.html') ? 'page' : undefined}>{label}</a>
         </>)}
+        {'..'}
       </nav>
     </header>
     <main id="main" class:list={['wrapper', { 'wrapper--wide': wide }]}>
