@@ -51,8 +51,8 @@ test('Markdown automatically publishes to the right section with math and highli
     await assert.rejects(output('posts/hidden/index.html'), { code: 'ENOENT' });
     await assert.rejects(output('projects/hidden/index.html'), { code: 'ENOENT' });
     const home = await output('index.html');
-    assert.match(home, /Work in progress\./);
-    assert.match(home, /<title>Klog<\/title>/);
+    assert.match(home, /work in progress\./);
+    assert.match(home, /<title>klog<\/title>/);
     assert.match(await output('thoughts.html'), /0;url=\/thoughts\//);
     assert.match(await output('projects.html'), /0;url=\/projects\//);
     assert.equal((await output('CNAME')).trim(), 'www.kevinzqiu.com');
